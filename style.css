@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Varela Round';
+    
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-color: #ebebeb;
+  
+}
+
+
+.logo-div {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    width: 35vh;
+    position: relative;
+
+}
+
+.logo {
+    height: 100px;
+    animation: wheel 3s;
+    position: absolute;
+    left: 70%;
+
+}
+
+.logo-text {
+    font-size: 1.7rem;
+    letter-spacing: 3px;
+    font-family: 'Rubik Distressed';
+    animation: textOpacity 4s;
+    cursor: pointer;
+}
+
+#drinksSidebarWrapper {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #26282C;
+    height: 100%;
+    width: 25vw;
+    right: 0;
+    bottom: 0;
+}
+
+#drinksSidebar {
+  
+    padding: 2rem;
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    overflow: hidden;
+    
+}
+
+#totalprice-proceed {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    margin-bottom: 2rem;
+}
+
+#totalprice-proceed > * {
+    color: white;
+}
+
+
+
+.sidebar-drink {
+    display: flex;
+    align-items: center;
+    line-height: 1rem;
+    height: 85px;
+    background-color: white;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.sidebar-drink img {
+    height: 100%;
+    padding: 0.2rem;
+    border-radius: 20px;
+}
+
+
+.name-price {
+    margin-left: .5rem;
+    font-size: 1.3rem;
+    
+}
+
+.drink-amount {
+    width: 2rem;
+}
+
+.increase-decrease {
+    margin-left: auto;
+    margin-right: 1rem;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+
+
+
+#proceedBtn {
+    padding: .7rem 5rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    background-color: #04B49C;
+    font-size: 1.2rem;
+    transition: .2s;
+   
+
+}
+
+#totalprice-proceed > * {
+    display: flex;
+    flex-direction: column;
+}
+
+#proceedBtn:hover {
+    cursor: pointer;
+    background-color: #05F0D1;;
+}
+
+.tables-active {
+    display: block;
+}
+
+
+.drinks-div-wrapper {
+    width: 75vw;
+    height: 80vh;
+    padding: 1.5rem;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.drinks-div-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .drink-navbar {
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+ 
+  }
+
+
+    .drink-navbar ul {
+    display: flex;
+    gap: 1.5rem;
+    
+
+  }
+  .drink-navbar ul li {
+    list-style: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    
+  }
+
+  .drink-navbar ul li:hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
+
+.input-wrapper {
+    display: flex;
+}
+
+#cocktail-input {
+    outline: none;
+    border-radius: 10px;
+    border: 2px solid black;
+    padding: 0.5rem;
+    width: 300px;
+    transition: .3s;
+}
+
+#cocktail-input:focus {
+    border: 2px solid #04B49C;
+}
+
+.fa-search {
+    font-weight: bolder;
+    color: #04B49C;
+}
+
+
+li button {
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    transition: .3s;
+    font-weight: bold;
+}
+
+li button:hover {
+    color: #04B49C;
+    cursor: pointer;
+}
+
+li button:focus {
+    color: #04B49C;
+}
+
+
+#drinks-div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+    gap: 1rem;
+}
+
+.drink-div {
+    width: 200px;
+
+    transition: .5s;
+    line-height: 0;
+    position: relative;
+    z-index: 1;
+    border-radius: 20px;
+    transition: .3s;
+    background-color: white;
+    padding: .5rem;
+}
+
+.drink-thumb:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.info-layer {
+    position: absolute;
+    top: -2.5%;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+    text-transform: capitalize;
+    z-index: -1;
+    opacity: 0;
+    transition: .5s;
+    border: 3px solid #04B49C;
+    overflow: scroll;
+    padding: 1rem;
+    font-size: 0.8rem;
+}
+
+.info-layer::-webkit-scrollbar {
+    display: none;
+  }
+
+.info-layer > * {
+    line-height: 1rem;
+    color: white; 
+}
+
+.layer-active {
+    z-index: 2;
+    opacity: 1;
+}
+
+
+.fa-circle-xmark {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 0.5rem;
+}
+
+
+.drink-div {
+    margin-top: 1.5rem;
+}
+
+.drink-div:hover {
+    transform: scale(1.1);
+    box-shadow: 0 7px 7px gray;
+}
+
+.drink-div > * {
+    display: block;
+    padding: .5rem;
+    margin-top: 0.5rem;
+}
+
+
+.drink-thumb {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    transition: .3s;
+}
+
+.add {
+    position: absolute;
+    left: 50%;
+    bottom: 25%;
+    transform: translate(-50%,-25%);
+    color: white;
+    font-weight: bold;
+    display: none;
+    
+}
+
+.add-drink:hover {
+    cursor: pointer;
+}
+
+
+
+.fa-circle-info {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 2.2rem;
+    color: #04B49C;
+    opacity: 0;
+    transition: .5s;
+}
+
+.drink-div:hover .fa-circle-info {
+    opacity: 1;
+}
+
+.fa-circle-info:hover {
+    cursor: pointer;
+    color: #05F0D1;
+}
+
+
+
+.fa-info-circle {
+    font-size: 2rem;
+    color: #04B49C;
+    font-size: 4rem;
+    color: whitesmoke;
+}
+
+
+
+
+@keyframes wheel {
+    0% {
+        transform: rotate(0deg);
+        left: 0;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        left: 70%;
+ 
+
+    }
+}
+
+@keyframes textOpacity {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        
+        opacity: 1;
+    }
+}
+
